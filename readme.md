@@ -43,8 +43,11 @@ route.ready();
 The `<Route>` component declaratively maps routes to the component hierarchy. It basically shows/hides a component based on the route attributes you provide:
 
 ```jsx
+import {Route} from 'can-route-react';
+
 // Create a basic Home component.
 Home () { return (<div>Welcome Home!</div>); }
+
 // The Home component will show when the route has a `page` attribute equal to "home".
 <Route data={{page: 'home'}} component={Home} />
 ```
@@ -52,6 +55,8 @@ Home () { return (<div>Welcome Home!</div>); }
 An alternate syntax allows you to show/hide a component based on the URL path. This is similar to React Router's [Route](https://github.com/ReactTraining/react-router/blob/master/docs/API.md#route) component.
 
 ```jsx
+import {Route} from 'can-route-react';
+
 // The Home component will show when the URL path is "/" or empty string.
 <Route path='/' component={Home} />
 ```
@@ -96,4 +101,3 @@ ReactDOM.render(
   document.querySelector('[root=true]')
 );
 ```
-
