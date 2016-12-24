@@ -65,7 +65,7 @@ import {Route} from 'can-route-react';
 
 ### Route Example
 
-```js
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Route} from 'can-route-react';
