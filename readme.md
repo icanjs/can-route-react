@@ -13,7 +13,7 @@ State-based routing with React components.
 
 ## State-Based Routing
 
-State-based routing decouples the URL from your application's routing.  Routing rules and URLs are created from a state object. It's easier to change URL schemes when needed. The [can-route](https://www.npmjs.com/package/can-route) module is the best state-based router available.
+State-based routing decouples the URL from your application's routing.  Routing rules and URLs are created from a state object. It's easier to change URL schemes when needed. The [can-route](https://www.npmjs.com/package/can-route) module is arguably the best state-based router available, so it was selected for its core routing functionality.
 
 ## Preparation
 Before you can use the components, you'll need to setup can-route.  Here's a basic example:
