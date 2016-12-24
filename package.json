@@ -1,0 +1,83 @@
+{
+  "name": "can-route-react",
+  "version": "0.0.1",
+  "description": "State-based routing with React components.",
+  "homepage": "https://github.com/icanjs/can-route-react",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/icanjs/can-route-react.git"
+  },
+  "author": {
+    "name": "Marshall Thompson",
+    "email": "marshall@creativeideal.net",
+    "url": "https://github.com/marshallswain"
+  },
+  "scripts": {
+    "preversion": "npm test && npm run build",
+    "version": "git commit -am \"Update dist for release\" && git checkout -b release && git add -f dist/",
+    "postversion": "git push --tags && git checkout master && git branch -D release && git push",
+    "testee": "testee test/test.html --browsers firefox",
+    "test": "npm run lint && npm run testee",
+    "lint": "semistandard --fix",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "build": "node build.js",
+    "document": "documentjs",
+    "develop": "done-serve --static --develop --port 8080"
+  },
+  "main": "src/can-route-react",
+  "keywords": [
+    "react-view-models",
+    "react",
+    "component",
+    "donejs",
+    "React Router",
+    "can-route"
+  ],
+  "system": {
+    "main": "can-route-react",
+    "configDependencies": [
+      "live-reload"
+    ],
+    "npmIgnore": [
+      "documentjs",
+      "testee",
+      "generator-donejs",
+      "donejs-cli",
+      "steal-tools"
+    ],
+    "plugins": [
+      "steal-css",
+      "steal-less",
+      "steal-react-jsx"
+    ],
+    "directories": {
+      "lib": "src"
+    },
+    "ext": {
+      "svg": "steal-svg"
+    }
+  },
+  "dependencies": {
+    "can-component": "^3.0.4",
+    "can-define": "^1.0.8",
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-view-models": "^0.0.7",
+    "steal-react-jsx": "^0.0.3"
+  },
+  "devDependencies": {
+    "can-route": "^3.0.6",
+    "can-route-pushstate": "^3.0.1",
+    "can-view-autorender": "^3.0.3",
+    "done-serve": "^0.2.0",
+    "semistandard": "^9.1.0",
+    "steal": "^1.0.4",
+    "steal-css": "^1.0.0",
+    "steal-less": "^1.0.1",
+    "steal-qunit": "^1.0.0",
+    "steal-tools": "^1.0.1",
+    "testee": "^0.3.0"
+  }
+}
