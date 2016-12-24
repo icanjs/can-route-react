@@ -2,7 +2,9 @@ import { connect } from 'react-view-models';
 import DefineMap from 'can-define/map/';
 import View from './route.jsx';
 import route from 'can-route';
-import {stripSlashes, usingHashChangeRouting} from '../utils';
+import isSubset from 'is-subset';
+import isEmpty from 'lodash.isempty';
+import {stripSlashes} from '../utils';
 
 export const ViewModel = DefineMap.extend({
   '*': {
@@ -12,17 +14,25 @@ export const ViewModel = DefineMap.extend({
   path: {
     type: 'string',
     get (lastSetVal) {
-      return stripSlashes(lastSetVal);
+      if (lastSetVal) {
+        return stripSlashes(lastSetVal);
+      }
     }
   },
 
   displayComponent: {
-    type: 'boolean',
-    value: false,
     get () {
-      var currentPath = route.url(route.data.serialize());
-      currentPath = stripSlashes(currentPath).replace('#!', '');
-      return this.path === currentPath;
+      let routeData = route.data.serialize();
+      let data = this.data && this.data.serialize ? this.data.serialize() : this.data;
+      if (data && !isEmpty(data)) {
+        return isSubset(routeData, data);
+      } else {
+        var currentPath = route.url(route.data.serialize());
+        if (currentPath) {
+          currentPath = stripSlashes(currentPath).replace('#!', '');
+        }
+        return this.path === currentPath;
+      }
     }
   },
 
