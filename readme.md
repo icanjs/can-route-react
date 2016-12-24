@@ -101,3 +101,6 @@ ReactDOM.render(
   document.querySelector('[root=true]')
 );
 ```
+
+## Running the Demo
+Do `npm install` or run `yarn` in the root directory.  Start an `http-server` and open the root directory.
