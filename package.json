@@ -27,6 +27,11 @@
     "develop": "done-serve --static --develop --port 8080"
   },
   "main": "src/can-route-react",
+  "semistandard": {
+    "env": [
+      "mocha"
+    ]
+  },
   "keywords": [
     "react-view-models",
     "react",
@@ -71,6 +76,7 @@
     "steal-react-jsx": "^0.0.3"
   },
   "devDependencies": {
+    "assert": "^1.4.1",
     "can-route": "^3.0.6",
     "can-route-pushstate": "^3.0.1",
     "can-view-autorender": "^3.0.3",
@@ -79,6 +85,7 @@
     "steal": "^1.0.4",
     "steal-css": "^1.0.0",
     "steal-less": "^1.0.1",
+    "steal-mocha": "^1.0.0",
     "steal-qunit": "^1.0.0",
     "steal-tools": "^1.0.1",
     "testee": "^0.3.0"

@@ -47,7 +47,6 @@ const ContactUs = ({children}) => {
   return (<div>{children}</div>);
 };
 
-
 ReactDOM.render(
   <div className='container'>
     <div>
