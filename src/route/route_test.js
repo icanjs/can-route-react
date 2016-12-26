@@ -3,9 +3,20 @@ import 'steal-mocha';
 import assert from 'assert';
 import route from 'can-route';
 import {ViewModel as RouteVM} from './route';
+import crr, {Route} from '../can-route-react';
 
 route('{page}', {page: 'home'});
 route.ready();
+
+describe('Module imports properly.', function () {
+  it('default export is an object.', function () {
+    assert(typeof crr.Route === 'function');
+  });
+
+  it('exports the Route module.', function () {
+    assert(typeof Route === 'function');
+  });
+});
 
 describe('Route ViewModel attributes', function () {
   it('There is no Component by default.', function () {
