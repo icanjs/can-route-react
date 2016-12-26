@@ -1,6 +1,6 @@
 {
   "name": "can-route-react",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "State-based routing with React components.",
   "homepage": "https://github.com/icanjs/can-route-react",
   "repository": {
