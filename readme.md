@@ -82,8 +82,8 @@ aboutClicked () {
 Home () => {
   return (<div>Welcome Home!'</div>);
 };
-About () => {
-  return (<div>About Us</div>);
+About ({children}) => {
+  return (<div>{children}</div>);
 };
 
 ReactDOM.render(
@@ -95,7 +95,10 @@ ReactDOM.render(
     <div>
 			{/* React Router compatible syntax is available. See Pro-tips. */}
       <Route path='/' component={Home} />
-      <Route path='/about' Component={About} />
+      <Route path='/about' component={About} >
+        {/* This inner text will show because the About component uses `children`. */}
+        Welcome to the About page!
+      </Route>
     </div>
   </div>,
   document.querySelector('[root=true]')
@@ -104,3 +107,8 @@ ReactDOM.render(
 
 ## Running the Demo
 Do `npm install` or run `yarn` in the root directory.  Start an `http-server` and open the root directory.
+
+## Changelog
+
+`0.1.0` - The `<Route>` component can render children if the routed component uses `{children}` in its content.
+`0.0.2` - Created the `<Route>` component.

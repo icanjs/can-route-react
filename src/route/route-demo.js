@@ -43,8 +43,8 @@ const Home = () => {
 const About = () => {
   return (<div>About Us</div>);
 };
-const ContactUs = () => {
-  return (<div>Get in touch!</div>);
+const ContactUs = ({children}) => {
+  return (<div>{children}</div>);
 };
 
 
@@ -57,8 +57,12 @@ ReactDOM.render(
     </div>
     <div>
       <Route data={{page: 'home'}} component={Home} />
-      <Route path='/about' Component={About} />
-      <Route data={{page: 'contact'}} Component={ContactUs} />
+      <Route path='/about' Component={About} >
+        This text won't show, because the `About` component doesn't use %7Bchildren%7D.
+      </Route>
+      <Route data={{page: 'contact'}} Component={ContactUs} >
+        Get in touch!
+      </Route>
     </div>
   </div>,
   document.querySelector('[root=true]')

@@ -36,13 +36,13 @@ export const ViewModel = DefineMap.extend({
     }
   },
 
-  component: {
+  Component: {
     type: 'any',
     get (lastSetVal) {
-      return lastSetVal || this.Component;
+      return lastSetVal || this.component;
     }
   },
-  Component: 'any'
+  component: 'any'
 });
 
 export default connect(ViewModel, View);
