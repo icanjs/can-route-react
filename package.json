@@ -40,7 +40,7 @@
     "React Router",
     "can-route"
   ],
-  "system": {
+  "steal": {
     "main": "can-route-react",
     "configDependencies": [
       "live-reload"
