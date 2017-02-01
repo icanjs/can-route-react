@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/icanjs/can-route-react.png?branch=master)](https://travis-ci.org/icanjs/can-route-react)
 
-State-based routing with React components.
+An experiment on using State-based routing with React components.
 
 ## What's included
 
